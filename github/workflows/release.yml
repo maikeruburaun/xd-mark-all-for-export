@@ -1,0 +1,36 @@
+name: Build and release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check syntax
+        run: node --check src/main.js && node -e "JSON.parse(require('fs').readFileSync('src/manifest.json'))"
+
+      - name: Check tag matches manifest version
+        run: |
+          V=$(node -p "require('./src/manifest.json').version")
+          [ "v$V" = "${GITHUB_REF_NAME}" ] || { echo "Tag ${GITHUB_REF_NAME} does not match manifest version v$V"; exit 1; }
+
+      - name: Build
+        run: bash scripts/build.sh
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.xdx
+          body_path: docs/release-notes-${{ github.ref_name }}.md
