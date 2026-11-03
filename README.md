@@ -2,7 +2,7 @@
 
 Marking layers for export one by one in Adobe XD is tedious. This plugin marks every layer it is allowed to reach in one click, so all of them can be downloaded from a Development share link.
 
-> **Status:** Adobe XD is in maintenance mode. This plugin was tested on XD version `61.0.12.1` (update this after testing).
+> **Status:** Adobe XD is in maintenance mode. This plugin was tested on XD version 61.0.12.1.
 
 ## Features
 
