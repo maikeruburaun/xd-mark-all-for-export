@@ -1,0 +1,12 @@
+{
+  "id": "bt7mark01",
+  "name": "Mark All Layers for Export",
+  "version": "1.1.0",
+  "description": "Marks every editable layer for export without triggering XD's edit-context rollback, and lists containers (masks, components, repeat grids) that must be entered to mark their contents.",
+  "host": { "app": "XD", "minVersion": "21.0.0" },
+  "uiEntryPoints": [
+    { "type": "menu", "label": "Mark all layers for export", "commandId": "markAll" },
+    { "type": "menu", "label": "Check what is still unmarked", "commandId": "checkStatus" },
+    { "type": "menu", "label": "Unmark all layers", "commandId": "unmarkAll" }
+  ]
+}
