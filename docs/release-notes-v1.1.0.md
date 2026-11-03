@@ -10,4 +10,4 @@ Marks every layer XD allows a plugin to edit, in one click, for Development link
 ### Install
 Download `MarkAllForExport-v1.1.0.xdx` below and double-click it. XD warns that the plugin is unverified; accept it.
 
-Tested on Adobe XD __.__.
+Tested on Adobe XD 61.0.12.1
